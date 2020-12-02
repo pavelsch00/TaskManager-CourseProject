@@ -30,9 +30,9 @@
                     </ContextMenu>
                 </DataGrid.ContextMenu>
                 <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding Id}" Header="Id" Width="50"/>
-                    <DataGridTextColumn Binding="{Binding ProcessName}" Header="Process Name" Width="180"/>
-                    <DataGridTextColumn Binding="{Binding Process.MainModule.FileName}" Header="Path" Width="180"/>
+                    <DataGridTextColumn Binding="{Binding Id, Mode=OneWay}" Header="Id" Width="50"/>
+                    <DataGridTextColumn Binding="{Binding ProcessName, Mode=OneWay}" Header="Process Name" Width="180"/>
+                    <DataGridTextColumn Binding="{Binding Process.MainModule.FileName, Mode=OneWay}"  Header="Path" Width="180"/>
                 </DataGrid.Columns>
             </DataGrid>
 
