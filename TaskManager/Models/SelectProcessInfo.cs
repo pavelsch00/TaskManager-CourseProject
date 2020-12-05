@@ -13,14 +13,7 @@ namespace TaskManager.Models
             Process = process;
             Id = process.Id;
             Name = process.ProcessName;
-            try
-            {
-                FileName = process.MainModule.FileName;
-            }
-            catch (Exception)
-            {
-                FileName = "Acces denied!";
-            }
+            WorkingSet64 = ((double)process.WorkingSet64 / 1048576).ToString("0.00");
             PagedMemorySize64 = ((double)process.PagedMemorySize64 / 1048576).ToString("0.00");
             VirtualMemorySize64 = ((double)process.VirtualMemorySize64 / 1048576).ToString("0.00");
             StartTime = process.StartTime;
@@ -55,7 +48,7 @@ namespace TaskManager.Models
 
         public string Name { get; set; }
 
-        public string FileName { get; set; }
+        public string WorkingSet64 { get; set; }
 
         public string PagedMemorySize64 { get; set; }
 

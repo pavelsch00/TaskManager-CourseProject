@@ -16,7 +16,7 @@
         <vm:ViewModel x:Key="ViewModel"/>
     </Window.Resources>
 
-    <Grid Margin="0,4,3.8,0.8">
+    <Grid Margin="0,4,3.8,0" Height="556" VerticalAlignment="Top">
         <Grid HorizontalAlignment="Left" Height="358" Margin="3,2,0,0" VerticalAlignment="Top" Width="327">
             <Label Content="Processes list:" FontSize="16" FontWeight="Bold" Margin="10,0,-6,0" Height="30" VerticalAlignment="Top" />
             <DataGrid x:Name="MyGrid" ItemsSource="{Binding Processes}"
@@ -37,16 +37,16 @@
             </DataGrid>
 
         </Grid>
-        <Grid Height="531" Margin="505,4,10,0" VerticalAlignment="Top">
+        <Grid Margin="505,4,10,21">
             <Label Content="Selected process info:" FontSize="16" FontWeight="Bold" Height="30" VerticalAlignment="Top" Margin="0,0,10.2,0" />
-            <Label Content="Process id:" HorizontalAlignment="Left" Height="28" Margin="0,30,0,0" VerticalAlignment="Top" Width="90"/>
-            <Label Content="{Binding SelectedProcess.Id, Mode=OneWay}" HorizontalAlignment="Left" Height="28" Margin="145,30,0,0" VerticalAlignment="Top" Width="110"/>
+            <Label Content="Process id:" HorizontalAlignment="Left" Height="28" Margin="260,30,0,0" VerticalAlignment="Top" Width="90"/>
+            <Label Content="{Binding SelectedProcess.Id, Mode=OneWay}" HorizontalAlignment="Left" Height="28" Margin="363,30,0,0" VerticalAlignment="Top" Width="172" RenderTransformOrigin="0.685,0.379"/>
 
             <Label Content="Paged memory size(MB):" HorizontalAlignment="Left" Height="28" Margin="0,58,0,0" VerticalAlignment="Top" Width="145"/>
             <Label Content="{Binding SelectedProcess.PagedMemorySize64, Mode=OneWay}" HorizontalAlignment="Left" Height="28" Margin="150,58,0,0" VerticalAlignment="Top" Width="105"/>
 
             <Label Content="Virtual memory size(MB):" HorizontalAlignment="Left" Height="28" Margin="3,91,0,0" VerticalAlignment="Top" Width="142"/>
-            <Label Content="{Binding SelectedProcess.VirtualMemorySize64}" HorizontalAlignment="Left" Height="28" Margin="150,91,0,0" VerticalAlignment="Top" Width="105" RenderTransformOrigin="0.524,0.421"/>
+            <Label Content="{Binding SelectedProcess.VirtualMemorySize64, Mode=OneWay}" HorizontalAlignment="Left" Height="28" Margin="150,91,0,0" VerticalAlignment="Top" Width="105" RenderTransformOrigin="0.524,0.421"/>
 
             <Label Content="Start time:" HorizontalAlignment="Left" Height="28" Margin="260,91,0,0" VerticalAlignment="Top" Width="118"/>
             <Label Content="{Binding SelectedProcess.StartTime, Mode=OneWay}" HorizontalAlignment="Left" Height="28" Margin="363,91,0,0" VerticalAlignment="Top" Width="172"/>
@@ -89,8 +89,10 @@
             <Label Content="Modules:" HorizontalAlignment="Left" Height="28"  FontSize="16" FontWeight="Bold" Margin="3,129,0,0" VerticalAlignment="Top" Width="87" RenderTransformOrigin="1.827,0.521"/>
             <Label Content="Name" HorizontalAlignment="Left" Height="28" Margin="10,157,0,0" VerticalAlignment="Top" Width="62" RenderTransformOrigin="1.827,0.521"/>
             <Label Content="Path:" HorizontalAlignment="Left" Height="28" Margin="218,157,0,0" VerticalAlignment="Top" Width="62" RenderTransformOrigin="1.827,0.521"/>
+            <Label Content="Working set size(MB):" HorizontalAlignment="Left" Height="28" Margin="0,30,0,0" VerticalAlignment="Top" Width="145" RenderTransformOrigin="0.381,0.121"/>
+            <Label Content="{Binding SelectedProcess.WorkingSet64, Mode=OneWay}" HorizontalAlignment="Left" Height="28" Margin="150,35,0,0" VerticalAlignment="Top" Width="105"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="125" Margin="10,410,0,0" VerticalAlignment="Top" Width="490">
+        <Grid HorizontalAlignment="Left" Margin="10,410,0,21" Width="490">
             <Button Content="Kill Process" Command="{Binding KillProcess}" HorizontalAlignment="Left" FontSize="15" Background="#FFA8A8A8"  VerticalAlignment="Top" Width="185" Height="39" Margin="0,86,0,0"/>
             <ComboBox Margin="280,10,25,80" ItemsSource="{Binding ProcessProperties}" SelectedItem="{Binding SelectedProcessProperty}"  Name="Priorities" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5">
                 <ComboBox.RenderTransform>

@@ -15,7 +15,7 @@ namespace TaskManager.Models
             remove { CommandManager.RequerySuggested -= value; }
         }
 
-        internal RelayCommand(Action<object> execute, Func<object, bool> canExecute = null)
+        public RelayCommand(Action<object> execute, Func<object, bool> canExecute = null)
         {
             _execute = execute;
             _canExecute = canExecute;
