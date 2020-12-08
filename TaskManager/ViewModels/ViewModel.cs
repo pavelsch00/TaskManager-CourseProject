@@ -21,6 +21,8 @@ namespace TaskManager.ViewModels
 
         private RelayCommand _openCommand;
 
+        private RelayCommand _proccesState;
+
         private RelayCommand _openProcess;
 
         private RelayCommand _killCommand;
@@ -44,6 +46,8 @@ namespace TaskManager.ViewModels
         }
 
         public RelayCommand OpenCommand => _openCommand ?? (_openCommand = new RelayCommand(OpenFileLocationImpl));
+
+        public RelayCommand ProccesState => _proccesState ?? (_proccesState = new RelayCommand(ProccesStateChange));
 
         public RelayCommand OpenProcess => _openProcess ?? (_openProcess = new RelayCommand(OpenProcessExecute));
 
@@ -117,6 +121,23 @@ namespace TaskManager.ViewModels
         {
             Processes.Remove(Processes.First(obj => obj.Id == SelectedProcess.Id));
             SelectedProcess.Process.Kill();
+        }
+
+        public void ProccesStateChange(object o)
+        {
+            var process = Process.GetProcessById(SelectedProcess.Id);
+
+            if (SelectedProcessInfo.State == StateProcess.Active)
+            {
+                SelectedProcessInfo.State = StateProcess.White;
+                process.Suspend();
+            }else
+            {
+                SelectedProcessInfo.State = StateProcess.Active;
+                process.Resume();
+            }
+
+            OnPropertyChanged(nameof(SelectedProcess));
         }
 
         public void StartProcess()
