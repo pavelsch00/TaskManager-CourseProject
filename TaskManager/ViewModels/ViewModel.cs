@@ -156,7 +156,7 @@ namespace TaskManager.ViewModels
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message, " Ooops", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(exception.Message, "Process start error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 

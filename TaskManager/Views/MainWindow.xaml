@@ -96,7 +96,7 @@
             <Label Content="Path:" HorizontalAlignment="Left" Height="28" Margin="218,157,0,0" VerticalAlignment="Top" Width="62" RenderTransformOrigin="1.827,0.521"/>
             <Label Content="Working set size(MB):" HorizontalAlignment="Left" Height="28" Margin="0,30,0,0" VerticalAlignment="Top" Width="145" RenderTransformOrigin="0.381,0.121"/>
             <Label Content="{Binding SelectedProcess.WorkingSet64, Mode=OneWay}" HorizontalAlignment="Left" Height="28" Margin="150,35,0,0" VerticalAlignment="Top" Width="105"/>
-            <Label Content="Number of procces:" HorizontalAlignment="Left" Height="28" Margin="-158,2,0,0" VerticalAlignment="Top" Width="113"/>
+            <Label Content="Number of processes:" HorizontalAlignment="Left" Height="28" Margin="-170,4,0,0" VerticalAlignment="Top" Width="125"/>
             <Label Content="{Binding Processes.Count, Mode=OneWay}" HorizontalAlignment="Left" Height="28" Margin="-45,4,0,0" VerticalAlignment="Top" Width="40"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Margin="10,410,0,21" Width="490">

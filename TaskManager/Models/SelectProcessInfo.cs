@@ -26,7 +26,7 @@ namespace TaskManager.Models
             catch (Exception exception)
             {
 
-                MessageBox.Show(exception.Message, "Acces denied!", MessageBoxButton.OK);
+                MessageBox.Show(exception.Message, "Access denied!", MessageBoxButton.OK);
             }
 
             try
@@ -72,7 +72,7 @@ namespace TaskManager.Models
                 }
                 catch (Exception exception)
                 {
-                    MessageBox.Show(exception.Message, "Acces denied!", MessageBoxButton.OK);
+                    MessageBox.Show(exception.Message, "Access denied!", MessageBoxButton.OK);
                 }
 
             }
